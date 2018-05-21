@@ -1,6 +1,6 @@
 FROM jboss/base-jdk:8
 
-ENV KEYCLOAK_VERSION 4.0.0.Beta2
+ENV KEYCLOAK_VERSION 4.0.0.Beta3
 # Enables signals getting passed from startup script to JVM
 # ensuring clean shutdown when container is stopped.
 ENV LAUNCH_JBOSS_IN_BACKGROUND 1
@@ -11,7 +11,7 @@ RUN yum install -y epel-release && yum install -y jq && yum clean all
 
 USER jboss
 
-RUN cd /opt/jboss/ && curl -L https://downloads.jboss.org/keycloak/$KEYCLOAK_VERSION/keycloak-$KEYCLOAK_VERSION.tar.gz | tar zx && mv /opt/jboss/keycloak-$KEYCLOAK_VERSION /opt/jboss/keycloak
+RUN cd /opt/jboss/ && curl -L https://www.dropbox.com/s/bo6ssi0a9xylms4/keycloak-$KEYCLOAK_VERSION-SNAPSHOT.tar.gz?dl=0 | tar zx && mv /opt/jboss/keycloak-$KEYCLOAK_VERSION /opt/jboss/keycloak
 
 ADD docker-entrypoint.sh /opt/jboss/
 
