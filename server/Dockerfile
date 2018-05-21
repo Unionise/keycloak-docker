@@ -11,7 +11,7 @@ RUN yum install -y epel-release && yum install -y jq && yum clean all
 
 USER jboss
 
-RUN cd /opt/jboss/ && curl -L https://www.dropbox.com/s/bo6ssi0a9xylms4/keycloak-$KEYCLOAK_VERSION-SNAPSHOT.tar.gz?dl=1 | tar zx && mv /opt/jboss/keycloak-$KEYCLOAK_VERSION /opt/jboss/keycloak
+RUN cd /opt/jboss/ && curl -L https://www.dropbox.com/s/bo6ssi0a9xylms4/keycloak-4.0.0.Beta3-SNAPSHOT.tar.gz?dl=1 | tar zx && mv /opt/jboss/keycloak-$KEYCLOAK_VERSION /opt/jboss/keycloak
 
 ADD docker-entrypoint.sh /opt/jboss/
 
