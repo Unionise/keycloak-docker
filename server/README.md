@@ -9,9 +9,11 @@ To create a network that will link Postgres and Keycloak:
 
     docker network create keycloak-network
 
+
 To pull and run docker image from our repo:
 
-    docker run -p 8080:8080 -p 9990:9990 --network=keycloak-network -e KEYCLOAK_LOGLEVEL=DEBUG -e KEYCLOAK_USER=keycloakadmin -e KEYCLOAK_PASSWORD=7R6c2378ydJN%hTg -e DB_VENDOR=POSTGRES -e DB_ADDR=postgres -e DB_USER=bg_user -e DB_PASSWORD=bg_user -e DB_DATABASE=keycloak --name keycloak --net keycloak-network jboss/keycloak
+    docker run -p 8080:8080 -p 9990:9990 --network=keycloak-network -e KEYCLOAK_LOGLEVEL=DEBUG -e KEYCLOAK_USER=keycloakadmin -e KEYCLOAK_PASSWORD=7R6c2378ydJN%hTg -e DB_VENDOR=POSTGRES -e DB_ADDR=postgres -e DB_USER=bg_user -e DB_PASSWORD=bg_user -e DB_DATABASE=keycloak --name keycloak --net keycloak-network suhinini/keycloak
+
 
 To create database for same `bg_user` that's used in platform:
 
