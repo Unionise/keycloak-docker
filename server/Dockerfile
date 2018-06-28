@@ -9,7 +9,7 @@ USER root
 
 RUN yum install -y epel-release && yum install -y jq && yum clean all
 
-COPY /tmp/keycloak_build/* /opt/jboss/keycloak
+COPY --chown=jboss  keycloak-build/ /opt/jboss/keycloak
 
 USER jboss
 
