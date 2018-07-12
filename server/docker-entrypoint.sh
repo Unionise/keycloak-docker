@@ -87,5 +87,8 @@ fi
 
 # Start Keycloak
 
+echo parameters
+echo $@
+
 /bin/bash -l -c "/opt/jboss/keycloak/bin/standalone.sh $@"
 exit $?
