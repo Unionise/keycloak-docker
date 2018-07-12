@@ -41,4 +41,4 @@ EXPOSE 8080
 
 ENTRYPOINT [ "/opt/jboss/docker-entrypoint.sh" ]
 
-CMD ["-b", "0.0.0.0", "--server-config", "standalone-ha.xml", "-Djboss.bind.address.private=${HOST_IP}", "-Djboss.default.multicast.address=${HOST_IP}"]
+CMD ["-b", "0.0.0.0", "--server-config", "standalone-ha.xml", "-Djboss.bind.address.private=${HOST_IP}", "-Djboss.default.multicast.address=${MULTICAST_ADDRESS}"]
