@@ -37,8 +37,8 @@ ADD databases/mariadb/module.xml /opt/jboss/keycloak/modules/system/layers/base/
 ENV JBOSS_HOME /opt/jboss/keycloak
 ENV LANG en_US.UTF-8
 
-RUN sysctl -w net.core.wmem_max = 16777216
-RUN sysctl -w net.core.rmem_max = 16777216
+RUN sysctl -w net.core.wmem_max=16777216
+RUN sysctl -w net.core.rmem_max=16777216
 
 EXPOSE 8080
 
